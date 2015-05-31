@@ -287,7 +287,7 @@ function template_info_center()
 			echo'
 				<li role="presentation">
 					<a href="#calendar" aria-controls="calendar" role="tab" data-toggle="tab">
-						<i class="fa fa-comments"></i>
+						<i class="fa fa-calendar"></i>
 						<span>&nbsp;', $context['calendar_only_today'] ? $txt['calendar_today'] : $txt['calendar_upcoming'], '</span>
 					</a>
 				</li>';
@@ -298,7 +298,7 @@ function template_info_center()
 			echo'
 				<li role="presentation">
 					<a href="#stats" aria-controls="stats" role="tab" data-toggle="tab">
-						<i class="fa fa-comments"></i>
+						<i class="fa fa-signal"></i>
 						<span>&nbsp;', $txt['forum_stats'], '</span>
 					</a>
 				</li>'; 
@@ -317,7 +317,7 @@ function template_info_center()
 	if (!empty($settings['number_recent_posts']) && (!empty($context['latest_posts']) || !empty($context['latest_post'])))
 	{
 		echo '
-			<div class="hslice tab-pane" id="recent_posts_content recent" role="tabpanel">
+			<div class="hslice tab-pane" id="recent" role="tabpanel">
 				<div class="entry-title" style="display: none;">', $context['forum_name_html_safe'], ' - ', $txt['recent_posts'], '</div>
 				<div class="entry-content" style="display: none;">
 					<a rel="feedurl" href="', $scripturl, '?action=.xml;type=webslice">', $txt['subscribe_webslice'], '</a>
