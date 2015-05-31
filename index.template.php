@@ -326,12 +326,12 @@ function template_body_below()
 			if(!empty($settings['facebook_check']))
 			echo'
 			<li>
-				<a href="', !empty($settings['facebook_text']) ? $settings['facebook_text'] : 'http://www.facebook.com ' ,'" title="', $txt['rs_facebook'], '"><i class="fa fa-twitter fa-2x"></i></a>
+				<a href="', !empty($settings['facebook_text']) ? $settings['facebook_text'] : 'http://www.facebook.com ' ,'" title="', $txt['rs_facebook'], '"><i class="fa fa-facebook fa-2x"></i></a>
 			</li>';
 			if(!empty($settings['twitter_check']))
 			echo'			
 			<li>
-				<a href="', !empty($settings['twitter_text']) ? $settings['twitter_text'] : 'http://www.twitter.com' ,'" title="', $txt['rs_twitter'], '"><i class="fa fa-facebook fa-2x"></i></a>
+				<a href="', !empty($settings['twitter_text']) ? $settings['twitter_text'] : 'http://www.twitter.com' ,'" title="', $txt['rs_twitter'], '"><i class="fa fa-twitter fa-2x"></i></a>
 			</li>';
 			if(!empty($settings['youtube_check']))
 			echo'
