@@ -174,7 +174,7 @@
 .fa-music:before {
   content: "\f001";
 }
-.fa-search:before {
+.fa-search:before,.fa-mlist_search:before {
   content: "\f002";
 }
 .fa-envelope-o:before {
@@ -344,7 +344,7 @@
 .fa-align-justify:before {
   content: "\f039";
 }
-.fa-list:before {
+.fa-list:before,.fa-view_all_members:before {
   content: "\f03a";
 }
 .fa-dedent:before,
