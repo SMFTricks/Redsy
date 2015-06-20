@@ -3932,7 +3932,8 @@ ul.social li .fa-rss:hover
 {
 	#admin_content .table > thead > tr > th:nth-child(2), #admin_content .table > tbody > tr > td:nth-child(2),
 	#admin_content .table > thead > tr > th:nth-child(4), #admin_content .table > tbody > tr > td:nth-child(4),
-	#admin_content .table > thead > tr > th:nth-child(5), #admin_content .table > tbody > tr > td:nth-child(5)
+	#admin_content .table > thead > tr > th:nth-child(5), #admin_content .table > tbody > tr > td:nth-child(5),
+	#mlist .table > thead > tr > th, #mlist .table > tbody > tr > td
 	{
 		display: none;
 	}
@@ -3941,6 +3942,12 @@ ul.social li .fa-rss:hover
 		display: table-cell !important;
 		text-align: right !important;
 	}
+	#mlist .table > thead > tr > th:first-child, #mlist .table > tbody> tr > td:first-child,
+	#mlist .table > thead > tr > th:nth-child(2), #mlist .table > tbody > tr > td:nth-child(2)
+	{
+		display: table-cell !important;
+	}	
+	
 }
 #IC .nav 
 {
