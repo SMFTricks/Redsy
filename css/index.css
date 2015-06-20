@@ -3536,7 +3536,7 @@ span.hidelink
 #mlist_search
 {
 	margin: auto;
-	width: 500px;
+	width: auto;
 }
 
 /* Styles for the basic search section.
