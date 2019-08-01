@@ -179,7 +179,16 @@ function template_main()
 
 	// Show the topic information - icon, subject, etc.
 	echo '
-			<div id="forumposts">';
+			<div id="forumposts">
+				<div class="display-info alert alert-redsy">
+					<h1>
+						', $context['subject'], '
+					</h1>
+					<ul class="reset"> 
+						<li class="h4"><i class="fa fa-comments fa-fw"></i>'. $context['real_num_replies'] .' '. $txt['replies'] .'</li>
+						<li class="h4"><i class="fa fa-eye fa-fw"></i>', $context['num_views'], ' '. $txt['views'] .'</li>
+					</ul>
+				</div>';
 
 	if (!empty($settings['display_who_viewing']))
 	{
@@ -227,7 +236,7 @@ function template_main()
 
 		echo '
 				<div class="body_message">
-					<div class="post_wrapper">';
+					<div class="row">';
 
 		// Show information about the poster of this message.
 		echo '
@@ -403,7 +412,7 @@ function template_main()
 							<div class="body_content"> 
 								<span class="arrow-left"></span>
 								<div class="postarea">';
-
+								
 				// If this is the first post, (#0) just say when it was posted - otherwise give the reply #.
 				if ($message['can_approve'] || $context['can_reply'] || $message['can_modify'] || $message['can_remove'] || $context['can_split'] || $context['can_restore_msg'])
 					echo '				
@@ -449,7 +458,9 @@ function template_main()
 					if ($message['can_approve'] || $context['can_reply'] || $message['can_modify'] || $message['can_remove'] || $context['can_split'] || $context['can_restore_msg'])
 						echo '
 											</ul>
-										</div>
+										</div>';
+										
+										echo'
 										<ul class="reset floatright" style="margin: 5px 15px 0 7px;">';
 
 					// Show a checkbox for quick moderation?

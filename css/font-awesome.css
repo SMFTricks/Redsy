@@ -227,7 +227,8 @@
 }
 .fa-signal:before,
 .fa-add_poll:before,
-.fa-post_poll:before {
+.fa-post_poll:before,
+.fa-results:before {
   content: "\f012";
 }
 .fa-gear:before,
@@ -235,7 +236,8 @@
 .fa-admin:before {
   content: "\f013";
 }
-.fa-trash-o:before {
+.fa-trash-o:before,
+.fa-remove_poll:before{
   content: "\f014";
 }
 .fa-home:before {

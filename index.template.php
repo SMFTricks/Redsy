@@ -103,7 +103,7 @@ function template_html_above()
 
 	// Here comes the JavaScript bits!
 	echo '
-	<script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
+	<script type="text/javascript" src="//ajax.googleapis.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
 	<script type="text/javascript" src="', $settings['theme_url'], '/scripts/redsy.js?fin20"></script>
 	<script type="text/javascript" src="', $settings['theme_url'], '/scripts/bootstrap.min.js?fin20"></script>
 	<script type="text/javascript">
@@ -143,7 +143,36 @@ function template_html_above()
 		.container {
 			width: ' . $settings['forum_width'] . ';
 		}
+	}';
+	if(!empty($settings['redsy_navbar_height']))
+	{
+	echo'
+	.navbar-default
+	{
+		height: ' . $settings['redsy_navbar_height'] . ';
 	}
+	.navbar-default .navbar-nav, .nav-notification
+	{
+		margin-top: ' . (($settings['redsy_navbar_height'] - 50) / 2)  . 'px !important;
+	}
+	.navbar-toggle, .navbar-brand
+	{
+		height: ' . $settings['redsy_navbar_height']  . ' !important;
+	}
+	.navbar-toggle
+	{
+		line-height: ' . $settings['redsy_navbar_height']  . ' !important;
+	}
+	.navbar-brand
+	{
+		line-height: ' . ($settings['redsy_navbar_height'] - 30) . 'px !important;
+	}
+	.navbar-brand .logo
+	{
+		max-height: ' . $settings['redsy_navbar_height']  . ' !important;
+	}';
+	}
+	echo'
 	</style>
 	<meta name="viewport" content="width=device-width, initial-scale=1" />
 	<meta http-equiv="Content-Type" content="text/html; charset=', $context['character_set'], '" />
@@ -188,7 +217,7 @@ function template_html_above()
 
 	echo '
 </head>
-<body', !empty($settings['redsy_navbar']) ? ' style="padding-top: 50px;"' :  '' ,'>';
+<body', !empty($settings['redsy_navbar']) ? ' style="padding-top: ' . (!empty($settings['redsy_navbar_height']) ? $settings['redsy_navbar_height'] : '50px') . ';"' :  '' ,'>';
 }
 
 function template_body_above()
@@ -204,9 +233,17 @@ function template_body_above()
 					<span class="icon-bar"></span>
 					<span class="icon-bar"></span>
 					<span class="icon-bar"></span>
-				</button>
+				</button>';
+				
+			if(!empty($context['user']['is_logged']))
+				echo '
+				<button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#user-menu">
+					<i class="fa fa-user"></i>
+				</button>';
+				
+			echo '
 				<a class="navbar-brand" href="' , $scripturl , '">', empty($context['header_logo_url_html_safe']) ? $context['forum_name'] : '<img class="logo" src="' . $context['header_logo_url_html_safe'] . '" alt="' . $context['forum_name'] . '" />', '</a>
-			</div>		
+			</div>			
 			<div class="collapse navbar-collapse">
 				<button type="button" class="navbar-toggle collapsed collapsemenu" id="upshrink" style="display: none;">
 					<span class="icon-bar"></span>
@@ -217,7 +254,7 @@ function template_body_above()
 				{
 				echo'
 					<ul class="nav navbar-nav navbar-right">
-						<li class="dropdown">
+						<li class="dropdown first-level">
 							<a href="' , $scripturl , '?action=profile" class="dropdown-toggle">
 								<img class="avatar img-circle" src="', !empty($context['user']['avatar']['href']) ? $context['user']['avatar']['href'] : $settings['images_url']. '/noavatar.png' ,'" alt="*" />
 								<span>', $context['user']['name'], '</span> <span class="caret"></span>
@@ -264,6 +301,18 @@ function template_body_above()
 	template_menu();
 	
 	// Define the upper_section toggle in JavaScript.
+	if(!empty($context['user']['is_logged']))
+	echo '
+	<div class="collapse navbar-collapse" id="user-menu">
+		<ul class="nav navbar-nav" role="menu">
+			<li><a href="' , $scripturl , '?action=profile;area=forumprofile;"><i class="fa fa-gear fa-fw"></i>' , $txt['edit_profile'] , '</a></li>
+			<li><a href="' , $scripturl , '?action=profile;area=account;"><i class="fa fa-wrench fa-fw"></i>' , $txt['profile_account'] , '</a></li>
+			<li><a href="' , $scripturl , '?action=unread;"><i class="fa fa-comment fa-fw"></i>' , $txt['new_posts'] , '</a></li>
+			<li><a href="' , $scripturl , '?action=unreadreplies;"><i class="fa fa-comments fa-fw"></i>' , $txt['new_replies'] , '</a></li>
+			<li class="divider"></li>
+			<li><a href="' , $scripturl , '?action=logout;sesc=', $context['session_id'], '"><i class="fa fa-sign-out fa-fw"></i>' , $txt['logout'] , '</a></li>
+		</ul>
+	</div>';
 	echo '
 		<script type="text/javascript"><!-- // --><![CDATA[
 			var oMainHeaderToggle = new smc_Toggle({
@@ -416,7 +465,7 @@ function template_menu()
 			foreach ($context['menu_buttons'] as $act => $button)
 			{
 				echo '
-						<li id="button_', $act, '" class="', $button['active_button'] ? 'active ' : '', '', !empty($button['sub_buttons']) ? 'dropdown' : '', '">
+						<li id="button_', $act, '" class="', $button['active_button'] ? 'active ' : '', '', !empty($button['sub_buttons']) ? 'dropdown first-level' : '', '">
 							<a ', !empty($button['sub_buttons']) ? 'class="dropdown-toggle"' : '', ' href="', $button['href'], '"', isset($button['target']) ? ' target="' . $button['target'] . '"' : '', '>
 								', $button['title'], '', !empty($button['sub_buttons']) ? ' <span class="caret"></span>' : '' ,'
 							</a>';
@@ -505,22 +554,10 @@ function template_button_strip($button_strip, $direction = 'top', $strip_options
 }
 function pages_titlesdesc()
 {
-	global $txt, $context, $scripturl, $settings, $modSettings, $options, $sourcedir, $topic, $topicinfo, $board_info, $board, $category;
+	global  $context;
 
-	if(!empty($topic))
-	{
-		echo '
-		<h2>', $context['subject'], '</h2>';
-	}
-	elseif(!empty($board))
-	{
-		echo '
-		<h2>',$board_info['name'],'</h2>';
-	}
-	else
-	{
 		echo '
 		<h2>',$context['page_title'],'</h2>';
-	}
+		
 }
 ?>

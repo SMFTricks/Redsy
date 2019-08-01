@@ -173,6 +173,12 @@ function template_settings()
 			'label' => $txt['redsy_navbar'],
 		),
 		array(
+			'id' => 'redsy_navbar_height',
+			'label' => $txt['redsy_navbar_height'],
+			'description' => $txt['redsy_navbar_height_desc'],
+			'type' => 'text',
+		),
+		array(
 			'id' => 'forum_width',
 			'label' => $txt['forum_width'],
 			'description' => $txt['forum_width_desc'],

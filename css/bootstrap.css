@@ -9,8 +9,7 @@
  * Config saved to config.json and https://gist.github.com/dfe8c23f60c3b4da3578
  */
 /*! normalize.css v3.0.2 | MIT License | git.io/normalize */
-@import url(http://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,800italic,400,300,600,700,800);
-html {
+@import url(https://fonts.googleapis.com/css?family=Open+Sans:400,300,300italic,400italic,600,600italic,700,700italic,800,800italic&subset=latin,greek,cyrillic,greek-ext,vietnamese,latin-ext,cyrillic-ext);html {
   font-family: sans-serif;
   -ms-text-size-adjust: 100%;
   -webkit-text-size-adjust: 100%;
@@ -2978,13 +2977,15 @@ select[multiple].input-group-sm > .input-group-btn > .btn {
   position: relative;
   float: right;
   margin-right: 15px;
-  padding: 9px 10px;
-  margin-top: 8px;
-  margin-bottom: 8px;
+  padding: 0 10px;
+  margin-top: 0;
+  margin-bottom: 0;
+  height: 50px;
+  line-height: 50px;
   background-color: transparent;
   background-image: none;
   border: 1px solid transparent;
-  border-radius: 4px;
+  color: #fff;
 }
 .navbar-toggle:focus {
   outline: 0;
@@ -3029,10 +3030,12 @@ select[multiple].input-group-sm > .input-group-btn > .btn {
   }
   .navbar-nav .open .dropdown-menu > li > a {
     line-height: 20px;
+	color: #fff;
   }
   .navbar-nav .open .dropdown-menu > li > a:hover,
   .navbar-nav .open .dropdown-menu > li > a:focus {
     background-image: none;
+	background-color: #e25d5d; 
   }
 }
 @media (min-width: 768px) {
