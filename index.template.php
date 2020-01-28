@@ -375,17 +375,17 @@ function template_body_below()
 			if(!empty($settings['facebook_check']))
 			echo'
 			<li>
-				<a href="', !empty($settings['facebook_text']) ? $settings['facebook_text'] : 'http://www.facebook.com ' ,'" title="', $txt['rs_facebook'], '"><i class="fa fa-facebook fa-2x"></i></a>
+				<a href="', !empty($settings['facebook_text']) ? $settings['facebook_text'] : 'https://www.facebook.com ' ,'" title="', $txt['rs_facebook'], '"><i class="fa fa-facebook fa-2x"></i></a>
 			</li>';
 			if(!empty($settings['twitter_check']))
 			echo'			
 			<li>
-				<a href="', !empty($settings['twitter_text']) ? $settings['twitter_text'] : 'http://www.twitter.com' ,'" title="', $txt['rs_twitter'], '"><i class="fa fa-twitter fa-2x"></i></a>
+				<a href="', !empty($settings['twitter_text']) ? $settings['twitter_text'] : 'https://www.twitter.com' ,'" title="', $txt['rs_twitter'], '"><i class="fa fa-twitter fa-2x"></i></a>
 			</li>';
 			if(!empty($settings['youtube_check']))
 			echo'
 			<li>
-				<a href="', !empty($settings['youtube_text']) ? $settings['youtube_text'] : 'http://www.youtube.com' ,'" title="', $txt['rs_youtube'], '"><i class="fa fa-youtube fa-2x"></i></a>
+				<a href="', !empty($settings['youtube_text']) ? $settings['youtube_text'] : 'https://www.youtube.com' ,'" title="', $txt['rs_youtube'], '"><i class="fa fa-youtube fa-2x"></i></a>
 			</li>';
 			if(!empty($settings['rss_check']))
 			echo'
@@ -396,7 +396,7 @@ function template_body_below()
 		</ul>
 		<ul class="reset">
 			<li>', theme_copyright(), '</li>
-			<li>Theme by <a href="http://smftricks.com/">SMFTricks</a></li>
+			<li>Theme by <a href="https://smftricks.com/">SMFTricks</a></li>
 			<li>', !empty($settings['redsy_copyright']) ? $settings['redsy_copyright'] : $context['forum_name'] .' &copy;' ,'</li>
 		</ul>';
 
