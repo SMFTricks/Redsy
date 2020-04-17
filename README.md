@@ -1,9 +1,31 @@
-# Redsy
-Redsy theme responsive SMF 2.0
-Copyright © 2015 by SMFTricks
+ <p align="center">
+    <img src="https://smftricks.com/logos/logo.png">
+ </p>
+  <p align="center">
+    <img src="https://custom.simplemachines.org/themes/index.php?action=download;lemma=2833;id=17612;image">
+ </p>
+ 
+ ## Reseller
+<img src="https://img.shields.io/badge/SMF-2.0-996ee1?style=flat-square">
 
-Theme by Daniiel
-http://www.simplemachines.org/community/index.php?action=profile;u=269838
-http://smftricks.com/index.php?action=profile;u=2 Daniel
-- You are allowed to edit any parts of theme, without authors knowledge, but you can't redistributate it, share it or sell it.
-- You are not allowed to change authors Copyright.
+* Developed by [Daniiel](https://github.com/dmarquez9)
+
+## Features
+- Responsive layout
+- Nav options
+  - Height
+  - Set as fixed/static
+- Bootstrap
+- FontAwesome
+- Social networks
+- Logo URL
+- Custom copyright
+
+## Requirements
+* Redsy can be installed on SMF 2.0.x
+
+## How to install
+* You can install Redsy under Themes and Layout in your forum administration.
+
+## Demo Online
+You can find a demo for this theme on SMF Tricks: [Demo](http://demo.smftricks.com/index.php?theme=57)
