@@ -6,7 +6,7 @@
  </p>
  
  ## Redsy
-<img src="https://img.shields.io/badge/SMF-2.0-996ee1?style=flat-square">
+<img src="https://img.shields.io/badge/SMF-2.0-996ee1?style=flat-square"> <img src="https://img.shields.io/badge/Responsive-Yes-6e97e1?style=flat-square">
 
 * Developed by [Daniiel](https://github.com/dmarquez9)
 
