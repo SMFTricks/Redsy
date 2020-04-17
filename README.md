@@ -5,7 +5,7 @@
     <img src="https://custom.simplemachines.org/themes/index.php?action=download;lemma=2833;id=17612;image">
  </p>
  
- ## Reseller
+ ## Redsy
 <img src="https://img.shields.io/badge/SMF-2.0-996ee1?style=flat-square">
 
 * Developed by [Daniiel](https://github.com/dmarquez9)
