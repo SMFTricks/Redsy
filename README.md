@@ -2,7 +2,7 @@
     <img src="https://smftricks.com/logos/logo.png">
  </p>
   <p align="center">
-    <img src="https://custom.simplemachines.org/themes/index.php?action=download;lemma=2833;id=17612;image">
+    <img src="https://custom.simplemachines.org/index.php?action=download;theme=2833;attach=241268;image">
  </p>
  
  ## Redsy
