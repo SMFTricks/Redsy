@@ -8,7 +8,6 @@
 * Developed by [Daniiel](https://github.com/dmarquez9)
 
 ### Features
-- Responsive layout
 - Nav options
    - Height
    - Set as fixed/static
