@@ -260,12 +260,12 @@ function template_body_above()
 								<span>', $context['user']['name'], '</span> <span class="caret"></span>
 							</a>
 							<ul class="dropdown-menu" role="menu">
-								<li><a href="' , $scripturl , '?action=profile;area=forumprofile;"><i class="fa fa-gear fa-fw"></i>' , $txt['edit_profile'] , '</a></li>
+								<li><a href="' , $scripturl , '?action=profile;area=forumprofile;"><i class="fa fa-cog fa-fw"></i>' , $txt['edit_profile'] , '</a></li>
 								<li><a href="' , $scripturl , '?action=profile;area=account;"><i class="fa fa-wrench fa-fw"></i>' , $txt['profile_account'] , '</a></li>
 								<li><a href="' , $scripturl , '?action=unread;"><i class="fa fa-comment fa-fw"></i>' , $txt['new_posts'] , '</a></li>
 								<li><a href="' , $scripturl , '?action=unreadreplies;"><i class="fa fa-comments fa-fw"></i>' , $txt['new_replies'] , '</a></li>
 								<li class="divider"></li>
-								<li><a href="' , $scripturl , '?action=logout;sesc=', $context['session_id'], '"><i class="fa fa-sign-out fa-fw"></i>' , $txt['logout'] , '</a></li>
+								<li><a href="' , $scripturl , '?action=logout;sesc=', $context['session_id'], '"><i class="fa fa-sign-out-alt fa-fw"></i>' , $txt['logout'] , '</a></li>
 							</ul>
 						</li>
 					</ul>';
@@ -375,17 +375,17 @@ function template_body_below()
 			if(!empty($settings['facebook_check']))
 			echo'
 			<li>
-				<a href="', !empty($settings['facebook_text']) ? $settings['facebook_text'] : 'https://www.facebook.com ' ,'" title="', $txt['rs_facebook'], '"><i class="fa fa-facebook fa-2x"></i></a>
+				<a href="', !empty($settings['facebook_text']) ? $settings['facebook_text'] : 'https://www.facebook.com ' ,'" title="', $txt['rs_facebook'], '"><i class="fab fa-facebook fa-2x"></i></a>
 			</li>';
 			if(!empty($settings['twitter_check']))
 			echo'			
 			<li>
-				<a href="', !empty($settings['twitter_text']) ? $settings['twitter_text'] : 'https://www.twitter.com' ,'" title="', $txt['rs_twitter'], '"><i class="fa fa-twitter fa-2x"></i></a>
+				<a href="', !empty($settings['twitter_text']) ? $settings['twitter_text'] : 'https://www.twitter.com' ,'" title="', $txt['rs_twitter'], '"><i class="fab fa-twitter fa-2x"></i></a>
 			</li>';
 			if(!empty($settings['youtube_check']))
 			echo'
 			<li>
-				<a href="', !empty($settings['youtube_text']) ? $settings['youtube_text'] : 'https://www.youtube.com' ,'" title="', $txt['rs_youtube'], '"><i class="fa fa-youtube fa-2x"></i></a>
+				<a href="', !empty($settings['youtube_text']) ? $settings['youtube_text'] : 'https://www.youtube.com' ,'" title="', $txt['rs_youtube'], '"><i class="fab fa-youtube fa-2x"></i></a>
 			</li>';
 			if(!empty($settings['rss_check']))
 			echo'
